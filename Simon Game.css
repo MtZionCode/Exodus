@@ -1,0 +1,454 @@
+.container {
+    padding-top: 5px;
+    width: 450px;
+    height: 600px;
+    background-color: black;
+    text-align: center;
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: 1px 0px 20px 4px #000;
+}
+
+.row-first {
+    margin-top: 7px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: auto;
+    height: 50px;
+    /*border: 1.5px solid red;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-gap: 2px;
+}
+
+.row-two {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.row-three {
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: auto;
+    height: 50px;
+    /*border: 1.5px solid red;*/
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+ul.buttons li {
+    display: inline-block;
+  /*box-shadow: 1px 0px 6px 4px #dd5d5d;*/
+}
+
+
+ul.buttons {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.Linkedinbutton,
+.Facebookbutton,
+.Tweetbutton,
+.Emailbutton
+ {
+  background-color: #0099ff;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px black;
+  font-size: 12px;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 6px 6px 4px black;
+  /*box-shadow: 1px 0px 6px 4px #dd5d5d;*/
+  line-height: .25em
+}
+
+.Linkedinbutton,
+.Facebookbutton,
+.Tweetbutton,
+.Emailbutton
+{
+  cursor: pointer;
+}
+
+.Linkedinbutton-X,
+.Facebookbutton-X,
+.Tweetbutton-X,
+.Emailbutton-X
+{
+  
+}
+
+.Linkedinbutton-X,
+.Facebookbutton-X,
+.Tweetbutton-X,
+.Emailbutton-X
+ {
+ box-shadow: 1px 0px 6px 4px #dd5d5d;
+ }
+
+
+.social-media-share{
+text-align: center;
+margin: auto;
+}
+
+
+.row-four {
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: auto;
+    height: 350px;
+    /*border: 5px solid red;*/
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.count-display {
+    box-shadow: inset 0px 5px 20px 0px #000;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 15px;
+    background-color: #430710;
+    border: 1px solid #615d5d;
+    width: auto;
+    height: 100px;
+  color: #680b19;
+  line-height: 100px;
+  font-family: digital-7;
+  font-size: 55px;
+}
+
+
+
+#number {
+    font-size: 55px;
+    line-height: 100px;
+    text-align: center;
+    margin: auto;
+    font-family: digital-7, sans-serif;
+  color: #680b19;
+}
+
+
+.simon-pads {
+    position: relative;
+    margin: auto;
+    width: 365px;
+    height: 365px;
+    /*border: 5px solid gray;*/
+    border-radius: 365px;
+}
+
+.pad {
+    margin: auto;
+    position: relative;
+    float: left;
+    width: 176px;
+    height: 176px;
+    border: 3px solid black;
+    box-shadow: inset 2px -2px 20px 0px #000;
+}
+
+/* I renamed it so that you can understand from reading the code
+I also changed the hit-* id's to classes so that it can be toggled and i gave them same border radius
+*/
+
+.hit-zero-green {
+    border-top-left-radius: 176px;
+    background-color: green;
+}
+
+.lightup-green {
+    border-top-left-radius: 176px;
+    background-color: #0cff00
+}
+
+.hit-one-red {
+    border-top-right-radius: 176px;
+    background-color: #c40000 /*#dd0000*/;
+}
+
+.lightup-red {
+    background-color: #fc0202; /*ff0000*/
+    border-top-right-radius: 176px;
+}
+
+.hit-two-yellow {
+    border-bottom-left-radius: 176px;
+    background-color: #797905;
+}
+
+.lightup-yellow {
+    background-color: #fbfb0b;
+    border-bottom-left-radius: 176px;
+}
+
+.hit-three-blue {
+    border-bottom-right-radius: 176px;
+    background-color: #0f3689;
+}
+
+.lightup-blue {
+    border-bottom-right-radius: 176px;
+    background-color: #1a96ee;
+}
+
+.Simon-border {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border-radius: 210px;
+    background-color: black;
+    top: 78px;
+    left: 77px;
+}
+
+.interior-circle {
+    position: absolute;
+    text-align: center;
+    background: url("https://s13.postimg.cc/svhyvtxmf/Simon_Knob.png") no-repeat;
+    background-size: auto 100%;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    top: 4px;
+    left: 8px;
+}
+
+p {
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 40px;
+    left: 35px;
+    font-size: 1.5em;
+}
+
+.social {
+    width: auto;
+    height: 60px;
+}
+
+#start,
+#off-on-switch {
+    height: 45px;
+}
+
+#start {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: inset 0px 0px 12px 0px #000;
+    outline: none;
+    margin-top: 1px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+#strict:active {
+      /*this code is optional: 1px 3px 2px #444,*/
+      box-shadow: 1px 3px 2px #444;
+}
+
+/*............... on/off button--------*/
+
+.on{
+  color: red;
+  font-size: 55px;
+  font-family: digital-7;
+  line-height: 1.85em;
+  text-align: center;
+}
+
+
+.tgl-box {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: inset 0px 0px 12px 0px #000;
+    outline: none;
+}
+
+
+.tgl {
+    display: none;
+}
+
+.tgl::selection,
+.tgl:after::selection,
+
+.tgl+.tgl-btn::selection {
+    background: none;
+}
+
+.tgl::selection,
+.tgl:after::selection,
+.tgl:before::selection,
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl+.tgl-btn::selection {
+    background: none;
+}
+
+.tgl+.tgl-btn {
+    outline: 0;
+    display: block;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    user-select: none;
+    user-select: none;
+    user-select: none;
+}
+
+.tgl+.tgl-btn:after,
+.tgl+.tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.tgl+.tgl-btn:after {
+    left: 0;
+}
+
+.tgl+.tgl-btn:before {
+    display: none;
+}
+
+.tgl:checked+.tgl-btn:after {
+    left: 50%;
+}
+
+.tgl-box+.tgl-btn {
+    overflow: hidden;
+    backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: all .2s ease;
+    transition: all .2s ease;
+    font-family: sans-serif;
+    background: #dbd9d9;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    /*box-shadow: inset 0px 0px 12px 0px #000;*/
+    outline: none;
+    height: 45px;
+}
+
+.tgl-box+.tgl-btn:after,
+.tgl-box+.tgl-btn:before {
+    display: inline-block;
+    transition: all .2s ease;
+    transition: all .2s ease;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    line-height: 3em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.tgl-box+.tgl-btn:after {
+    left: 100%;
+    content: attr(data-tg-on);
+    box-shadow: inset 0px 0px 12px 0px #000;
+}
+
+.tgl-box+.tgl-btn:before {
+    left: 0;
+    content: attr(data-tg-off);
+    color: black;
+    border: 1px solid #dbd9d9;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 12px 0px #000;
+}
+
+.tgl-box+.tgl-btn:active {
+    background: #888;
+}
+
+.tgl-box+.tgl-btn:active:before {
+    left: -10%;
+}
+
+.tgl-box:checked+.tgl-btn {
+    background: #86d993;
+}
+
+.tgl-box:checked+.tgl-btn:before {
+    left: -100%;
+}
+
+.tgl-box:checked+.tgl-btn:after {
+    left: 0;
+}
+
+.tgl-box:checked+.tgl-btn:active:after {
+    left: 10%;
+}
+
+/*..............end...........................*/
+
+.strict-and-light {
+    /*text-align: center;*/
+    /*margin: auto;*/
+    height: 45px;
+    background-color: white;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 5px;
+}
+
+#strict {
+    float: left;
+    width: 110px;
+    height: 40px;
+    background-color: #faff00;
+    border: 2px solid black;
+    outline: none;
+    box-shadow: 1px 3px 2px #444, inset 0px 0px 12px 0px #000; /*1px 3px 2px #444*/
+    margin-left: 5px;
+    margin-top: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+            
+}
+
+
+.light {
+    width: 80px;
+    height: 35px;
+    background-color: #dc3f3f;
+    border: 2px solid black;
+    margin-right: 6px;
+    margin-top: 3px;
+    float: right;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.light-glow{
+  background-color: red;
+  box-shadow: -1px 0px 15px 7px red;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,82 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="Simon Game.css">
+
+<script src="Simon Game.js"></script>
+
+<title>	
+</title>
+</head>
+<body>
+<!--<h1>Simon Game Web App</h1>-->
+
+   <div class="container">
+        <div class="row-first">
+            <button id="start" type="button">start</button>
+
+            <!--<button id ="off-on-switch">-->
+            <input class='tgl tgl-box' id='cb1' type='checkbox'>
+            <label class='tgl-btn' data-tg-off='OFF' data-tg-on='ON' for='cb1'></label>
+            <!--</button>-->
+
+            <div class="strict-and-light">
+                <button id="strict" type="button">strict</button>
+                <div class="light">
+                </div>
+            </div>
+        </div>
+
+        <div class="row-two">
+    <!----> <div class="count-display">
+              <div id="number">8888888888888888</div>
+            </div>
+        </div>
+
+        <div class="row-three">
+            <div class="social-media-share">
+                <ul class="buttons"> 
+                 
+          <li class="Linkedinbutton">
+          <i class= "fa fa-linkedin-square fa-fw"></i>LINKEDIN</a>
+          </li>
+          <li class="Tweetbutton">
+          <i class= "fa fa-twitter fa-fw"></i>TWITTER</a>
+          </li>
+          <li class="Facebookbutton">
+          <i class= "fa fa-facebook-official fa-fw"></i>FACEBOOK</a>
+          </li>
+          <li class="Emailbutton"> 
+          <i class= "fa fa-envelope-square fa-fw"></i>EMAIL</a>
+          </li>
+        </ul>
+            </div>
+        </div>
+
+        <div class="row-four">
+            <div class="simon-pads">
+            <audio id="audio"></audio>
+            <div onclick="play('http://www.soundjay.com/button/sounds/button-4.mp3')"  class="pad hit-zero-green" id="0">
+            </div>
+            <div onclick="play('http://www.soundjay.com/button/sounds/button-09.mp3')"  class="pad hit-one-red" id="1">
+             </div>
+
+             <div onclick="play('http://www.soundjay.com/button/sounds/button-10.mp3')" class="pad hit-two-yellow" id="2">
+              </div>
+
+              <div onclick="play('http://www.soundjay.com/button/sounds/button-7.mp3')" class="pad hit-three-blue" id="3">
+              </div>
+
+                <div class="Simon-border">
+                    <div class="interior-circle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
