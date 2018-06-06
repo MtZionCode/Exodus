@@ -1,7 +1,8 @@
 
  //under construction......stay tuned
 
-/* My goal is that none of the buttons on the simon game (including the colored pads) should work when Simon Game is off (on/off toggle button)
+/* My goal is that none of the buttons on the simon game (including the colored pads) can work when Simon Game is off (on/off toggle button), but as soon as you press the "Start" button after turning the game on, a random sequence of buttons presses (these light up) is generated via a getRandom function.
+
 
 "Simon Game is a simple game which goal is for user to repeat the pattern showed by the program. 
 With each round a new step is added to the pattern making, the game much more difficult with every round. 
