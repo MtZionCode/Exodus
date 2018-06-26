@@ -14,11 +14,12 @@ The provided example constituted of 4 different fields with different color for 
 I might like to achieve my goals using a state method employing usage of MOBX (mobx.js.org/index.htmL) 
 */
 
-
-
-
+//under construction......stay tuned
 
 function play(sound){
+  if(!on){
+     return;
+     }
    var audio = document.getElementById("audio");
     audio.setAttribute('src', sound);
   //setAttribute() method adds specified attribute to element, and gives it specified value. If specified attribute already exists, only value is set/changed
@@ -28,8 +29,8 @@ function play(sound){
 
 $(document).ready(function(){ 
 
-var simonGamePlays = [];
-var simonGameUserPlays = [];
+var simonGamePlays = []; //replayed button-strokes by Simon game
+var simonGameUserPlays = []; // input by Simon user
 const LEVELS_TO_REACH = 20;
 var id, color, level = 0;
 var i;
@@ -46,29 +47,53 @@ blueButton();
   
 /*....................start button functions.......................*/  
   
-$("#start").click(function(){
+function turnGameOn(){ 
+  $('#strict').click(toggleStrict);
+ document.querySelector(".hit-zero-green").addEventListener("click", illuminateCurrentButton);
+  document.querySelector(".hit-one-red").addEventListener("click", illuminateCurrentButton);
+  document.querySelector(".hit-two-yellow").addEventListener("click", illuminateCurrentButton);
+  document.querySelector(".hit-three-blue").addEventListener("click", illuminateCurrentButton);
+  // as soon as start button is pressed a Simon game begins playing automatically by selecting random button
   beginSequence();
  $('.count-display').removeClass("on");
  $('.count-display').addClass("on").html("this is level 01");
   strict = false;
   level = 0;
-  level++;
+  level++; //level auto-increments upon each level reached
   simonGamePlays = []; // simon Game array stores Simon input to be compared against user
   simonGameUserPlays = []; //simon game user array stores user input tob compared against Simons input
   //simonGamePlayerSequence(); function for Simon Game Player array
 
-  const buttons = document.getElementsByClassName('pad'); //retrieve the elements of a particular item which are the pads 
-
+  const buttons = document.getElementsByClassName('pad'); 
+  //retrieve the elements of a particular item which are the pads 
+  
+  //tie this if function into start button to enable random button to be selected by Simon game
   if(buttons.length > 0) { //as long as greater than 0, can be two buttons, etc
     function getRandomIndex(){
       var random = Math.floor(Math.random() * 4);
       buttons.item(random).click(); //randomIndex is parameter of item
       simonGamePlays.push(random);
   };
+    //outside function
+    getRandomIndex()
 };
-});  
-    
+};  
+  
+  function turnGameOff(){ 
+   document.querySelector(".hit-zero-green").removeEventListener("click", illuminateCurrentButton);
+  document.querySelector(".hit-one-red").removeEventListener("click", illuminateCurrentButton);
+  document.querySelector(".hit-two-yellow").removeEventListener("click", illuminateCurrentButton);
+  document.querySelector(".hit-three-blue").removeEventListener("click", illuminateCurrentButton);
+    $(".pad").removeClass("lightup"); 
+  }; 
+  
+  
+  
 /*........on/of toggle switch functions..................*/
+  
+  $('#start').click(() => {if(on){turnGameOn()}})  //disable game
+  
+   
 
     $(".tgl-btn").click(function() {
       if (!on){
@@ -80,6 +105,7 @@ $("#start").click(function(){
         on = false;
         $('.count-display').removeClass("on").html("888888888888888"); // turn display light off
         $('.light').removeClass("light-glow")//turn strict light off
+        turnGameOff() //caller
       }
     }); 
  
@@ -122,21 +148,28 @@ function beginSequence(){
 /*.........add interval pad class and sound...................*/
   
 /**/
-function addPadClassSound(id, color){
-  $("#" + id).addClass(color + "lightup"); //soon as function starts want to target that specific id
-  //playAudio(id); //play sound function (corresponds to other sound function preceeding)
-  setTimeout (function(){ //ends the usage of this class and brings next class into view
-  $("#"+ id).removeClass(color + "lightup");
-  }, 500); //time for delay for function to execute
+function illuminateCurrentButton(event){
+  var button = $(event.target);
+  button.toggleClass('lightup');
 }
 
+ 
 /*........play Simon pad sounds.......................*/ 
-/*  
-  function playSound(id){
-    
-  }
   
-*/  
+  function redButton() {
+    //select the button
+    var illuminateRed = document.querySelector(".hit-one-red");
+    //add event Listener
+    illuminateRed.addEventListener("click", function () {
+        //condition to toggle the classes
+        if (this.className == "pad hit-one-red")
+            this.className = "pad lightup-red";
+        else
+            this.className = "pad hit-one-red";
+    });
+}
+  
+
   
   
 //old sound stuff
@@ -207,9 +240,22 @@ strict button function will not work when start button is off
 strict button light turns on when strict button is pressed
 strict button function turns off when on/off button is turned off
 */  
-      
-$('#strict').click(function(){
-	$('.light').toggleClass('light-glow')
+
+function toggleStrict(){
+if(on){$('.light').toggleClass('light-glow')}
+  
+}
+
+  /*
+  $('#strict').click(() => {if(on){'light-glow'()}})
+  
+  if(on){$('.light').toggleClass('light-glow')}
+  
+
+$('#start').click(() => {if(on){turnGameOn()}}) 
+  
+  */ 
+  
 //make part of video-screen text blink 
 //var element = $(".light-glow");
 //var shown = true;
@@ -224,7 +270,6 @@ function toggle() {
         shown = true;
     }
 }
-});
   
 
  //share-links code:
@@ -259,3 +304,6 @@ $(".Emailbutton").on("click", function() {
   return false;
 }); 
 });
+
+
+
