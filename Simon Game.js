@@ -62,6 +62,13 @@ $("#start").click(function(){
   if(buttons.length > 0) { //as long as greater than 0, can be two buttons, etc
     function getRandomIndex(){
       var random = Math.floor(Math.random() * 4);
+      
+      // KK: Maybe instead of .click here just imitate the behavior instead of actually
+      // faking a click
+
+      // Then in the illuminate function, actually push the user's data into the
+      // array because you can be sure the user clicked on it instead of the computer
+
       buttons.item(random).click(); //randomIndex is parameter of item
       simonGamePlays.push(random);
   };

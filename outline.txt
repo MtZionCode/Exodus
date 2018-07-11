@@ -1,0 +1,26 @@
+// Build a switch that toggles the game on
+
+// Build a start button that can start the game
+
+// When start is clicked, choose a random color and store this color
+// in the global simonPlays array
+
+// When user clicks button
+  // Store this click in the userPlays array
+
+  // Compare the two arrays
+
+  // If they don't match
+    // Play a 'game over' sound and end the game
+
+  // If they do match
+    // Check if this should be the last turn? If so, they've won the game
+
+    // If not, Computer repeats the first move and shows the player the next
+    // color and stores the next color in the simonPlays array
+
+    // Add 1 to the level counter
+
+
+
+  
