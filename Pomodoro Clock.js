@@ -1,3 +1,16 @@
+/*
+Goals/Logic:
+The on button should turn the clock on 
+The pause button should be pause the clock at anytime during the clock's count-down process
+The stop/reset button should be able to stop or reset the countdown timer at anytime during the countdown timer's countdown process
+The start/resume button should be able to enable the clock to pickup from where it left off after pause button has been pressed
+The off button should power off the clock. The off button should be able turn off the clock at anytime during the clock's count-down process
+None of the functions for any button should be able to work when clock is off
+None of the functions for any button should be able to work unless on button is pressed
+The green circle visible when you turn the clock on is to be a CSS/javascript integrated piechart/radar device that will syn with count-down process 
+*/
+
+
 $(document).ready(() => {
 
 let seconds = 60; //(duration for timer to run)
