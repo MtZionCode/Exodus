@@ -62,6 +62,13 @@ $("#start").click(function(){
   if(buttons.length > 0) { //as long as greater than 0, can be two buttons, etc
     function getRandomIndex(){
       var random = Math.floor(Math.random() * 4);
+      
+      // KK: Maybe instead of .click here just imitate the behavior instead of actually
+      // faking a click
+
+      // Then in the illuminate function, actually push the user's data into the
+      // array because you can be sure the user clicked on it instead of the computer
+
       buttons.item(random).click(); //randomIndex is parameter of item
       simonGamePlays.push(random);
   };
@@ -104,16 +111,21 @@ function toggle() {
 function beginSequence(){
     var i = 0; //everytime function starts, it starts with i set to zero
     var simonUserInterval = setInterval(function() {
+      // KK: If you want this variable to be accessible here, you either need to
+      // pass it in or put it in global scope
+
       id = simonGamePlays[i]; //this id to be found with Math.random function
-    color= $("#"+id).attr("class");
+      color= $("#"+id).attr("class");
       //attribute to this id the classes for it (in CSS)
-    console.log(id+" "+color); //print id and color eg. 0 and green
+      console.log(id+" "+color); //print id and color eg. 0 and green
       //implement an if statement that would clear the setInterval variable
-    addPadClassSound(); //going to pull a class
+      
+      // KK: you need to actually pass the variables into the function
+      addPadClassSound(id, color); //going to pull a class
     i++;
     if (i == simonGamePlays.length){ 
       //if statement that clears setInterval variable
-    clearInterval(simonUserInterval);
+      clearInterval(simonUserInterval);
     }
 }, 1000);
 }
@@ -138,67 +150,8 @@ function addPadClassSound(id, color){
   
 */  
   
-  
-//old sound stuff
-/*
-
-function greenButton() {
-    //select the button
-    var illuminateRed = document.querySelector(".hit-zero-green");
-    //add event Listener
-    illuminateRed.addEventListener("click", function () {
-        //condition to toggle the classes
-        // == means return true if the operands are equal (but not of the same type)
-        if (this.className == "pad hit-zero-green")
-        // = means one operand is the equal value of the other ex. x=y
-            this.className = "pad lightup-green";
-        else
-            this.className = "pad hit-zero-green";
-    });
-    
-    // so if this class name is equal to (but not of the same type as) pad hit-zero-green, then this class name is the same value as pad-light-up green, else (if not), this class name is the equal value of pad-hit-zero-green
-}
-
-function redButton() {
-    //select the button
-    var illuminateRed = document.querySelector(".hit-one-red");
-    //add event Listener
-    illuminateRed.addEventListener("click", function () {
-        //condition to toggle the classes
-        if (this.className == "pad hit-one-red")
-            this.className = "pad lightup-red";
-        else
-            this.className = "pad hit-one-red";
-    });
-}
-
-function yellowButton() {
-    //select the button
-    var illuminateRed = document.querySelector(".hit-two-yellow");
-    //add event Listener
-    illuminateRed.addEventListener("click", function () {
-        //condition to toggle the classes
-        if (this.className == "pad hit-two-yellow")
-            this.className = "pad lightup-yellow";
-        else
-            this.className = "pad hit-two-yellow";
-    });
-   
-}
-
-function blueButton() {
-    //select the button
-    var illuminateRed = document.querySelector(".hit-three-blue");
-    //add event Listener
-    illuminateRed.addEventListener("click", function () {
-        //condition to toggle the classes
-        if (this.className == "pad hit-three-blue")
-            this.className = "pad lightup-blue";
-        else
-            this.className = "pad hit-three-blue";
-    });
-}
-*/
+  // KK: Removing commented out lines, it will always be accessible in version control
+  // if we decide we need it later
   
 /*
 strict button workings...concepting operating concept
@@ -226,6 +179,8 @@ function toggle() {
 }
 });
   
+  // KK: Let's decide whether to use jQuery click functions or vanilla JS click functions
+  // instead of mixing and matching
 
  //share-links code:
 //LinkedIn
@@ -242,7 +197,8 @@ $('.Linkedinbutton').click(function() {
   });
 
 //Facebook  
- var facebookShare = document.querySelector('[class="Facebookbutton"]');
+ // KK: document.querySelector can use jQuery-like syntax
+ var facebookShare = document.querySelector('.Facebookbutton');
 
 facebookShare.onclick = function(e) {
   e.preventDefault();
